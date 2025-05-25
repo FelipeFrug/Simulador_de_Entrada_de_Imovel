@@ -1,4 +1,5 @@
 from functions import parcela_mensal_juros, parcela_mensal_igpm
+import matplotlib.pyplot as plt
 
 # As unicas coisas que devem ser alteradas de forma a fazer o programa funcionar são as quatro variaveis abaixo
 valor_do_imovel = 500000
@@ -21,13 +22,25 @@ def main(valor_do_imovel: float, entrada: float, tempo_contrato: int, taxa_juros
     for indice in range(len(lista_valor_igpm)):
         print(f"Ano {indice}: R$ {lista_valor_igpm[indice]:.2f}", )
 
-    if taxa_juros < 5 and taxa_juros > 12:
+    plt.plot(range(len(lista_valor_igpm)), lista_valor_igpm, label='IGPM', marker='o')
+    plt.legend()
+    plt.xlabel('Anos')
+    plt.ylabel('Valor Mensal')
+    plt.title('Valores Mensais com IGPM e Taxa de Juros')
+    plt.grid(True)
+
+
+    if taxa_juros < 5 or taxa_juros > 12:
         print("Taxa de juros não está no intervalo indicado, por favor verifique a taxa de juros")
+        plt.show()
         return
     
     print(f"valor mensal com {taxa_juros}% ao ano:")
     for indice in range(len(lista_valor_juros)):
         print(f"Ano {indice}: R$ {lista_valor_juros[indice]:.2f}", )
+
+    plt.plot(range(len(lista_valor_juros)), lista_valor_juros, label='Taxa de Juros', marker='o')
+    plt.show()
     return
 
 

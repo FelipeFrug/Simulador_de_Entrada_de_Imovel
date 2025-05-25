@@ -9,9 +9,7 @@ De forma a rodar o codigo é necessário alterar apenas as variaveis abaixo no a
 - `tempo_contrato`
 - `taxa_juros`
 
-Não foi utilizada nenhuma biblioteca externa portanto não há a necessidade de instalar nada, mas o arquivo requirements.txt está criado de forma a facilitar o desenvolvimento do projeto. 
-
-Caso utilizado futuramente, o seguinte comando deve ser executado no terminal:
+para instalar as bibliotecas necessárias utilize o comando abaixo:
 
 pip install -r requirements.txt
 
@@ -24,4 +22,6 @@ O calculo do valor das parcelas para cada ano de contrato, tanto pelo igpm quant
 
 Caso desejado é possivel passar o valor do igpm para a função main, mas o codigo usa 6% como padrão.
 
-A simulação é feita integralmente pelo terminal, caso o programa seja alterado para devolver alguma coisa diferente é necessário alterar apenas o return da função main.
+A simulação é feita pelo terminal e através de um gráfico demonstrando quanto será o valor de uma parcela mensal por igpm e quanto será o valor pelos juros compostos.
+
+O gráfico foi feito de forma a facilitar a comparação entre os dois valores.
